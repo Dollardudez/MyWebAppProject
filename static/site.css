@@ -1,12 +1,15 @@
 body{
   align-content: center;
-  width: 85vw;
 }
 
 #Content{
   top: 50%;
-  left: 50%;
-  
+  left: 50%; 
+}
+
+img{
+  width: 200px;
+  height: 200px;
 }
 
 #Header{
@@ -14,6 +17,7 @@ body{
 }
 
 #MapDiv{
+  align-items: center;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -22,15 +26,16 @@ body{
 }
 
 .Map{
-  margin: 0 20px;
+  margin: 20px 20px 20px 20px;
 }
 
-@media (max-height: 680px){
+@media (max-width: 680px){
   #MapDiv{
+    text-align: center;
     display: flex;
     flex-direction: column;
-    --flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 }
