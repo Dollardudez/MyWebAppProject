@@ -1,0 +1,24 @@
+{
+  "name": "my-map-app",
+  "version": "1.0.0",
+  "description": "a web app that finds fun stuff on maps!",
+  "main": "server.js",
+  "dependencies": {
+    "node": "^16.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dollardudez/MyWebAppProject.git"
+  },
+  "author": "Robert Clancy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dollardudez/MyWebAppProject/issues"
+  },
+  "homepage": "https://github.com/Dollardudez/MyWebAppProject#readme"
+}

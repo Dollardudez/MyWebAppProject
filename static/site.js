@@ -1,6 +1,6 @@
 var boxArray = [];
 const mapdiv = document.getElementById("MapDiv");
-fetch('static/box-locations.json')
+fetch('box-locations.json')
 .then(response => response.json())
 .then(data => {
   for(let i = 0; i < data.length; i++){
