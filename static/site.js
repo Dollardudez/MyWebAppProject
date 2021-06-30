@@ -10,11 +10,12 @@ fetch('box-locations.json')
     let lng = boxArray[i].lng;
     console.log(boxArray[i].name);
     var myIMGDiv = document.createElement('div');
+    myIMGDiv.className = "EachMapDiv";
     mapdiv.appendChild(myIMGDiv);
     var p = document.createElement('p');
+    p.className = "Name";
     p.innerHTML = name;
-    var myMap = 
-    myIMGDiv.appendChild(p);
+    var myMap = myIMGDiv.appendChild(p);
     myIMGDiv.appendChild(CreateElement(name, `https://open.mapquestapi.com/staticmap/v5/map?key=bHFGwnYDpeEqGPgYbqqmHBr7LuInUuNZ&locations=${lat},${lng}&size=200,200@2x`)); 
   }
   

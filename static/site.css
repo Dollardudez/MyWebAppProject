@@ -1,14 +1,24 @@
-body{
-  align-content: center;
+html{
+  font-family: 'Crimson Text', serif;
 }
 
-p{
-  
+#Header{
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  color: #032071;
+  justify-content: center;
+}
+
+.Name{
+  margin-bottom: 0px;
 }
 
 #Content{
-  top: 50%;
-  left: 50%; 
+  display: flex;
+  width: 85vw;
+  justify-content: center;
+  margin: 15vh;
 }
 
 img{
@@ -27,10 +37,40 @@ img{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-color: beige;
+}
+
+.EachMapDiv{
+  border-radius: 2%;
+  margin: 3vh 3vw 3vh 3vw;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: fit-content;
+  width: fit-content;
+  background-color: white;
+}
+
+.EachMapDiv:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#Intro{
+  align-items: center;
+  margin-top: 5vh;
+  margin-bottom: 300px;
+  display: flex;
+  width: 65vw;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+h2{
+  color: #17712f;
 }
 
 .Map{
-  margin: 20px 20px 20px 20px;
+  margin-top: 20px ;
 }
 
 @media (max-width: 680px){
@@ -40,6 +80,10 @@ img{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+  }
 }
 
+#logo{
+  width: 60px;
+  height: auto;
 }
