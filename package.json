@@ -4,7 +4,11 @@
   "description": "a web app that finds fun stuff on maps!",
   "main": "server.js",
   "dependencies": {
-    "node": "^16.4.0"
+    "better-sqlite3": "^7.4.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "node": "^16.4.1",
+    "sanitize-html": "^2.4.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,0 +1,13 @@
+<h2>Requests for the Chests</h2>
+  <ul>
+  <% requests.forEach((request) => { %>
+    <li>
+        <%= request.request %>
+        <% if(request.fulfilled != 0) { %>
+          <p>Fulfilled!</p>
+        <%}%>
+        <% if(request.fulfilled == 0) { %>
+          <p>Not Fulfilled...</p>
+        <%}%>
+  <% }); %>
+  </ul>

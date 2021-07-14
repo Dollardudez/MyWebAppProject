@@ -1,10 +1,15 @@
 const http = require('http');
-const handleRequest = require('./src/handle-request');
+require('./src/database');
+require('./src/templates');
 
-const port = 4000;
 
-var server = http.createServer(handleRequest);
+const port = 3000;
 
-server.listen(port, function(){
-  console.log("Server is listening on port " + port);
+// Create the server
+const app = require('./src/app');
+
+// Start listening for requests
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
 });
+
