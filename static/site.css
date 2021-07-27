@@ -4,11 +4,20 @@ html{
 }
 
 #Header{
-  height: 40vh;
+  height: 60vh;
   display: flex;
   align-items: center;
-  color: #032071;
+  color: white;
   justify-content: center;
+  background-image: url("view-4703515_1280.jpg");
+  background-position: 10% 10%;
+  background-size: cover;
+  background-attachment: local;
+}
+
+h1{
+  font-size: 80px;
+
 }
 
 .Name{
@@ -31,6 +40,11 @@ img{
   text-align: center;
 }
 
+#Whitespace{
+  background: #f9f9ea;
+  width: 100%;
+}
+
 #MapDiv{
   align-items: center;
   text-align: center;
@@ -42,8 +56,8 @@ img{
 }
 
 .EachMapDiv{
-  border-radius: 2%;
-  margin: 3vh 3vw 3vh 3vw;
+  padding: 0px;
+  margin: 2vh 2vw 2vh 2vw;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   background-color: white;
@@ -55,19 +69,23 @@ img{
 
 #Intro{
   align-items: center;
-  margin-top: 5vh;
-  margin-bottom: 300px;
+  margin-top: 3vh;
+  margin-bottom: 200px;
   display: flex;
   width: 65vw;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  margin: 15vh auto;
+}
+
+#Intro-Paragraph{
+  margin: 5vh auto;
+  font-size: 60px;
 }
 
 h2{
-  color: #17712f;
+  color: #2f723b;
   text-align: center;
-  font-size: 34px;
 }
 
 .Map{
@@ -85,6 +103,24 @@ h2{
 }
 
 #logo{
-  width: 60px;
+  width: 100px;
   height: auto;
 }
+
+#User{
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  color: white;
+}
+
+#Divider{
+  margin-top: 20vh;
+}
+
+#navbar-container{
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
+}
+
