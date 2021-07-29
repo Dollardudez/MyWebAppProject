@@ -14,7 +14,7 @@ const db = require('../database');
 function boxLocations(req, res) {
   var boxes = db.prepare("SELECT * FROM boxes;").all();
   var boxesJSON = JSON.stringify(boxes);
-
+  console.log("In Database!");
   // Serve the JSON
   res.setHeader('Content-Type', "application/json");
   res.setHeader('Content-Length', boxesJSON.length);

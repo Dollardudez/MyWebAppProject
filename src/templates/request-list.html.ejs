@@ -1,13 +1,19 @@
 <h2>Requests for the Chests</h2>
-  <ul>
-  <% requests.forEach((request) => { %>
-    <li>
+<ul>
+<% requests.forEach((request) => { %>
+  <li id="<%= request.id%>">
+    <div class="request-user">
+
+    </div>
+      <p class="request-text">
         <%= request.request %>
-        <% if(request.fulfilled != 0) { %>
-          <p>Fulfilled!</p>
-        <%}%>
-        <% if(request.fulfilled == 0) { %>
-          <p>Not Fulfilled...</p>
-        <%}%>
-  <% }); %>
-  </ul>
+      </p>
+
+      <% if(request.fulfilled != 0) { %>
+        <p>Fulfilled!</p>
+      <%}%>
+      <% if(request.fulfilled == 0) { %>
+        <p>Not Fulfilled...</p>
+      <%}%>
+<% }); %>
+</ul>

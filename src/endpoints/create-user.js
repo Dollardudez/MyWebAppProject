@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt');
 const templates = require('../templates');
-const sessions = require('../sessions');
 const db = require('../database');
 const serveError = require('../serve-error');
 
@@ -12,24 +11,27 @@ const serveError = require('../serve-error');
  * @param {http.ServerResponse} res - the response object
  */
 function createUser(req, res) {
-  var username = req.body.username;
+  var email = req.body.email;
   var password = req.body.password;
+  var firstname = req.body.first;
+  var lastname = req.body.last;
   var passwordConfirmation = req.body.passwordConfirmation;
   
   // Check password and password confirmation match
   if(password !== passwordConfirmation) return failure(req, res, "Your password and password confirmation must match.");
   
   // Check for existing user
-  var existingUser = db.prepare("SELECT * FROM users WHERE username = ?").get(username);
-  if(existingUser) return failure(req, res, `The username "${username}" is already taken.`);
+  var existingUser = db.prepare("SELECT * FROM users WHERE email = ?").get(email);
+  if(existingUser) return failure(req, res, `The username "${email}" is already taken.`);
   
   // Hash the password
   const passes = 10;
   bcrypt.hash(password, passes, (err, hash) => {
     if(err) return serveError(req, res, 500, err);
     // Save user to the database
-    var info = db.prepare("INSERT INTO users (username, cryptedPassword) VALUES (?, ?);").run(username, hash);
-    if(info.changes === 1) success(req, res);
+    var info = db.prepare("INSERT INTO users (firstname, lastname, password, email) VALUES (?, ?, ?, ?);").run(firstname, lastname, hash, email);
+    var user = db.prepare(`SELECT * FROM users where email = ?;`).get(email);
+    if(info.changes === 1) success(req, res, user);
     else failure(req, res, "An error occurred.  Please try again.");
   });
 }
@@ -42,11 +44,18 @@ module.exports = createUser;
  * @param {http.ServerResponse} res - the response object
  * @param {integer} userID - the id of the user in the database
  */
-function success(req, res, userID) {
-  // Create session
-  sessions.create(user);
+function success(req, res, user) {
   // Set session cookie
-  res.setHeader("Set-Cookie", `SID=${sid}; Secure; HTTPOnly`);
+  console.log(user.firstname);
+  var session = {
+    user: {
+      first: user.firstname,
+      last: user.lastname,
+      email: user.email
+    }
+  }
+  console.log(session);
+  res.setHeader("Set-Cookie", `session=${encodeURIComponent(JSON.stringify(session))};`);
   // Redirect to home page
   res.statusCode = 302;
   res.setHeader("Location", "/");
@@ -60,14 +69,17 @@ function success(req, res, userID) {
  * @param {string} errorMessage - a message to display to the user
  */
 function failure(req, res, errorMessage) {
+  var loggedIn = req.session && true;
+  var username = loggedIn ? req.session.user.first + " " + req.session.user.last : "Guest";
   if(!errorMessage) errorMessage = "There was an error processing your request.  Please try again."
   var form = templates["signup.html"]({
     errorMessage: errorMessage
   });
+  var navBar = templates['navbar.html']({user: username, LoggedIn: loggedIn.toString() });
   var html = templates["layout.html"]({
-    title: "Sign In",
-    post: form,
-    list: ""
+    title: "Sign Up",
+    navbar: navBar,
+    content: form
   });
   res.setHeader("Content-Type", "text/html");
   res.setHeader("Content-Length", html.length);

@@ -25,11 +25,11 @@
    /* Body */
     .better-nav .body { float: right; height: 100%; }
     .better-nav .body li:hover,
-    .better-nav .body li:focus { background: #498cc9; }
+    .better-nav .body li:focus { background: #ededc1; }
     .better-nav .body li:hover > a,
     .better-nav .body li:focus > a { opacity: 1; }
     .better-nav .body ul { list-style: none; margin: 0; padding: 0; height: 100%; }
-    .better-nav .body ul li.active { background: #498cc9; }
+    .better-nav .body ul li.active { background: #ededc1; }
     .better-nav .body > ul > li { display: table; float: left; height: 100%; }
     .better-nav .body > ul > li > a { display: table-cell; vertical-align: middle; text-decoration: none; padding: 0 15px; }
     /* Dropdown */

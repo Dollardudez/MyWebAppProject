@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-const sessions = require('../sessions');
 const templates = require('../templates');
 const db = require('../database');
 const serveError = require('../serve-error');
@@ -12,12 +11,13 @@ const serveError = require('../serve-error');
  * @param {http.ServerResponse} res - the response object
  */
 function createSession(req, res) {
-  var username = req.body.username;
+  
+  var email = req.body.email;
   var password = req.body.password;
-  var user = db.prepare("SELECT * FROM users WHERE username = ?").get(username);
+  var user = db.prepare("SELECT * FROM users WHERE email = ?").get(email);
   console.log('user', user);
-  if(!user) return failure(req, res, "Usename/Password not found.  Please try again.");
-  bcrypt.compare(password, user.cryptedPassword, (err, result) => {
+  if(!user) return failure(req, res, "Email/Password not found.  Please try again.");
+  bcrypt.compare(password, user.password, (err, result) => {
     if(err) return serveError(req, res, 500, err);
     console.log('result', result);
     if(result) success(req, res, user);
@@ -35,10 +35,17 @@ module.exports = createSession;
  * @param {object} user - the user who signed in
  */
 function success(req, res, user) {
-  // Create session
-  var sid = sessions.create(user);
-  // Set session cookie
-  res.setHeader("Set-Cookie", `SID=${sid}; Secure; HTTPOnly`);
+  
+  console.log(user.firstname);
+  var session = {
+    user:{
+      first: user.firstname,
+      last: user.lastname,
+      email: user.email
+    }
+  }
+  console.log(session);
+  res.setHeader("Set-Cookie", `session=${encodeURIComponent(JSON.stringify(session))};`);
   // Redirect to home page
   res.statusCode = 302;
   res.setHeader("Location", "/");
@@ -54,14 +61,21 @@ function success(req, res, user) {
  * @param {string} errorMessage - a message to display to the user
  */
 function failure(req, res, errorMessage) {
+  const loggedIn = req.session && true;
+  var username = loggedIn ? req.session.user.first + " " + req.session.user.last : "Guest";
+  if (typeof loggedIn === 'undefined') {
+    loggedIn = false;
+  }
   if(!errorMessage) errorMessage = "There was an error processing your request.  Please try again."
   var form = templates["signin.html"]({
     errorMessage: errorMessage
   });
+    var navBar = templates['navbar.html']({user: username});
+
   var html = templates["layout.html"]({
-    title: "Sign In",
-    post: form,
-    list: ""
+    title: "Sign Up",
+    navbar: navBar,
+    content: form
   });
   res.setHeader("Content-Type", "text/html");
   res.setHeader("Content-Length", html.length);

@@ -5,6 +5,7 @@ fetch('box-locations.json')
 .then(data => {
   for(let i = 0; i < data.length; i++){
     boxArray[i] = data[i];
+    let id = boxArray[i].id;
     let name = boxArray[i].name;
     let lat = boxArray[i].lat;
     let lng = boxArray[i].lng;
@@ -12,20 +13,32 @@ fetch('box-locations.json')
     var myIMGDiv = document.createElement('div');
     myIMGDiv.className = "EachMapDiv";
     mapdiv.appendChild(myIMGDiv);
+    
     var p = document.createElement('p');
     p.className = "Name";
     p.innerHTML = name;
     var myMap = myIMGDiv.appendChild(p);
-    myIMGDiv.appendChild(CreateElement(name, `https://open.mapquestapi.com/staticmap/v5/map?key=bHFGwnYDpeEqGPgYbqqmHBr7LuInUuNZ&locations=${lat},${lng}&size=200,200@2x`)); 
+    
+    var aTag = CreateCardLink(id);
+    myIMGDiv.appendChild(aTag);
+
+    aTag.appendChild(CreateMapCard(name, `https://open.mapquestapi.com/staticmap/v5/map?key=bHFGwnYDpeEqGPgYbqqmHBr7LuInUuNZ&locations=${lat},${lng}&size=200,200@2x`)); 
   }
   
 });
 
-function CreateElement(name, url) {
+function CreateMapCard(name, url) {
   var img = document.createElement('img');
   img.src = url;
   img.className = "Map";
   img.innerHTML = name;
   return img;
+}
+
+function CreateCardLink(id) {
+  var aTag = document.createElement('a');
+  var url = `/box-locations/${id}`;
+  aTag.href= url;
+  return aTag;
 }
 
