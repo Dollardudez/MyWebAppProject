@@ -17,7 +17,6 @@ html{
 
 h1{
   font-size: 80px;
-
 }
 
 .Name{
@@ -121,5 +120,10 @@ h2{
   position: absolute;
   top: 5vh;
   left: 5vh;
+}
+
+.icons{
+  width : auto;
+  height : auto;
 }
 

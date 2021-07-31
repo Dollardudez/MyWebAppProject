@@ -49,6 +49,8 @@ function success(req, res, user) {
   console.log(user.firstname);
   var session = {
     user: {
+      admin: user.admin,
+      id: user.id,
       first: user.firstname,
       last: user.lastname,
       email: user.email

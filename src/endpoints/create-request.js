@@ -9,13 +9,9 @@ const db = require('../database');
 function createRequest(req, res) {
   var box_id = req.params.id;
   var request = req.body.content;
-  console.log(request);
-  console.log(box_id);
   var user = db.prepare("SELECT id FROM users WHERE email = ? AND firstname = ? AND lastname = ?").get(req.session.user.email, req.session.user.first, req.session.user.last);
-  console.log(user);
   // Publish the post to the database
   var info = db.prepare("INSERT INTO requests (box_id, user_id, request, fulfilled) VALUES (?, ?, ?, ?);").run(box_id, user.id, request, 0);
-  console.log(req.params);
   // Determine if the write succeeded
   if(info.changes !== 1) return serveError(req, res, 500, "Unable to write to database");
     request = sanitizeHTML(request);

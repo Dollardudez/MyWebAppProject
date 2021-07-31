@@ -36,15 +36,15 @@ module.exports = createSession;
  */
 function success(req, res, user) {
   
-  console.log(user.firstname);
   var session = {
     user:{
+      admin: user.admin,
+      id: user.id,
       first: user.firstname,
       last: user.lastname,
       email: user.email
     }
   }
-  console.log(session);
   res.setHeader("Set-Cookie", `session=${encodeURIComponent(JSON.stringify(session))};`);
   // Redirect to home page
   res.statusCode = 302;
