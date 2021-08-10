@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const app = require('./src/app');
 
 // Start listening for requests
-app.listen(8080, () => {
-  console.log(`Listening on port 8081`);
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
 });
 
