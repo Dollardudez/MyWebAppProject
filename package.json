@@ -4,12 +4,12 @@
   "description": "a web app that finds fun stuff on maps!",
   "main": "server.js",
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "better-sqlite3": "^7.4.3",
+    "bcrypt": "^3.0.6",
+    "better-sqlite3": "^6.0.1",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "node": "^16.6.0",
+    "node": "^14.14.0",
     "nvm": "0.0.4",
     "sanitize-html": "^2.4.0",
     "uuid": "^8.3.2"
