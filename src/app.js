@@ -13,7 +13,9 @@ const loadCookieSession = require('./middleware/load-cookie-session');
 const logout = require('./endpoints/logout');
 const indexPage = require('./endpoints/index');
 const fulfillRequest = require('./endpoints/fulfill-request');
-const createBox = require('./endpoints/box-locations-new');
+const newBox = require('./endpoints/box-locations-new');
+const createBox = require('./endpoints/box-locations-create');
+
 
 
 
@@ -24,7 +26,7 @@ app.use(parseCookie);
 app.use(loadCookieSession);
 app.use(express.static('static'));
 app.get('/', indexPage);
-app.get("/box-locations/create", createBox);
+app.get("/box-locations/create", newBox);
 app.post("/box-locations/create", loadBody, createBox);
 app.post("/box-locations/:id/requests/:request_id/fulfill", loadBody, fulfillRequest);
 app.post("/box-locations/:id/requests", loadBody, createRequest);

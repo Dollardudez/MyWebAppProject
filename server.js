@@ -1,9 +1,10 @@
 const http = require('http');
 require('./src/database');
 require('./src/templates');
+require('dotenv').config();
 
 
-const port = 3000;
+const port = process.env.PORT;
 
 // Create the server
 const app = require('./src/app');

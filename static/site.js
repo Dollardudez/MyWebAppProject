@@ -1,3 +1,7 @@
+
+
+var html = document.getElementById("MapDiv");
+html.style.visibility = "hidden";
 var boxArray = [];
 const mapdiv = document.getElementById("MapDiv");
 fetch('box-locations.json')
@@ -23,8 +27,11 @@ fetch('box-locations.json')
     myIMGDiv.appendChild(aTag);
 
     aTag.appendChild(CreateMapCard(name, `https://open.mapquestapi.com/staticmap/v5/map?key=bHFGwnYDpeEqGPgYbqqmHBr7LuInUuNZ&locations=${lat},${lng}&size=200,200@2x`)); 
-  }
-  
+    }
+    console.log("am i here");
+   html.style.visibility = "visible";
+
+
 });
 
 function CreateMapCard(name, url) {
