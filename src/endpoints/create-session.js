@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const templates = require('../templates');
 const db = require('../database');
 const serveError = require('../serve-error');
