@@ -4,7 +4,7 @@
   "description": "a web app that finds fun stuff on maps!",
   "main": "server.js",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.1",
     "better-sqlite3": "^6.0.1",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
