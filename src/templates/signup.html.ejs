@@ -1,6 +1,8 @@
 <div> 
   <h2>Sign Up</h2>
-  <form method="POST">
+  <p> Hello, this form adds the given information into a sqlite database, please do not input any real information because although I do encrypt the password, I am not confident in my security practices!</p>
+  <p>In a production website I would add a constraint to the length and characters required in the database. I would also send a confirmation email to the provided email.</p>
+  <form method="POST" class="signin-card">
 
     <div class="error-message">
       <%= errorMessage %>

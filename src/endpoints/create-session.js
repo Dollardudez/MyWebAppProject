@@ -38,6 +38,7 @@ function success(req, res, user) {
   
   var session = {
     user:{
+      time: Date.UTC(),
       admin: user.admin,
       id: user.id,
       first: user.firstname,
