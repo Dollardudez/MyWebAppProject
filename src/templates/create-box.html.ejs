@@ -3,10 +3,10 @@
   <form method="POST" action="/box-locations/create">
     <label>Name</label>
     <textarea name="name" rows="10" required></textarea>
-    <label>Lat</label>
-    <textarea name="lat" rows="10" required></textarea>
-    <label>Lng</label>
-    <textarea name="lng" rows="10" required></textarea>
-    <input type="submit" value="Post"/>
+    <label>Latitude</label>
+    <input type="number" name="lat" rows="1" required/>
+    <label>Longitude</label>
+    <input type="number" rows="1" name="lng" required/>
+    <button type="submit" value="Create Chest Location"></button>
   </form>
 </div>
