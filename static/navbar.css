@@ -32,6 +32,8 @@
     .better-nav .body ul li.active { background: #ededc1; }
     .better-nav .body > ul > li { display: table; float: left; height: 100%; }
     .better-nav .body > ul > li > a{ display: table-cell; vertical-align: middle; text-decoration: none; padding: 0 15px; text-align: inherit; }
+    .better-nav .body > ul > li > p{ color: #2f723b; display: table-cell; vertical-align: middle; text-decoration: none; padding: 0 15px; text-align: inherit; }
+    .better-nav .body > ul > li > a.active{ background: #ededc1;}
 
       
 

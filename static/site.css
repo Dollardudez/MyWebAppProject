@@ -73,7 +73,6 @@ a{
   margin-top: 3vh;
   margin-bottom: 200px;
   display: flex;
-  width: 65vw;
   flex-direction: column;
   justify-content: center;
   margin: 15vh auto;
@@ -137,7 +136,7 @@ h2{
   background: #2f723b;
 }
 
-#web{
+ #web{
   margin-left: -10vw;
 }
 #community{
@@ -145,8 +144,22 @@ h2{
 }
 #connect{
   margin-left: 20vw;
-}
+} 
 
 .intro-icons{
-  justify-content: center;
+  margin: 5vh;
+  color: #2f723b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nice-icons{
+  display: flex;
+  background:white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
 }
