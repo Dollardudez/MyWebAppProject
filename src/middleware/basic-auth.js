@@ -27,9 +27,9 @@ function basicAuth(req, res, next) {
       var user = db.prepare("SELECT * FROM users WHERE username = ?").get(email);
       if(!user) return res.writeHead(403).end();
       bcrypt.compare(password, user.cryptedPassword, function(err, result) {
-      if(err) return serveError(req, res, 500, err);
-      if(result) next();
-      else res.writeHead(403).end();
+        if(err) return serveError(req, res, 500, err);
+        if(result) next();
+        else res.writeHead(403).end();
       });
   }
 }
