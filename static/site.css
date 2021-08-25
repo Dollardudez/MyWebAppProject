@@ -80,7 +80,7 @@ a{
 
 #Intro-Paragraph{
   margin: 5vh auto;
-  font-size: 60px;
+  font-size: 40px;
 }
 
 h2{
@@ -131,19 +131,31 @@ h2{
 }
 
 #Contact{
-  width: 100%;
   margin: 0;
-  background: #2f723b;
+  
 }
 
- #web{
-  margin-left: -10vw;
+.contact-card{
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  background: white;
+  box-shadow: 1px 4px 8px 1px rgba(0,0,0,0.2);
+}
+
+#web{
+  margin-left: -20vw;
+
 }
 #community{
-  margin-left: 2vw;
+  margin-left: 6vw;
+
 }
 #connect{
-  margin-left: 20vw;
+  margin-left: 25vw;
+
 } 
 
 .intro-icons{
@@ -152,6 +164,8 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 
 #nice-icons{
@@ -162,4 +176,33 @@ h2{
   width: 100%;
   align-items: center;
   flex-direction: column;
+}
+
+#footer > ul > li {
+  text-decoration: none;
+  display: inline;
+  color: #2f723b;
+  margin: 2.5vw;
+  margin-top: 5vh;
+}
+
+#footer > ul {
+  vertical-align: middle;
+}
+
+#footer {
+  background: white;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+#intro-paragraph-div{
+  align-items: center;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  font-size: 20px;
+  color: #295C8A;
 }
