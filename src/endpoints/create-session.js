@@ -71,7 +71,7 @@ function failure(req, res, errorMessage) {
   var form = templates["signin.html"]({
     errorMessage: errorMessage
   });
-    var navBar = templates['navbar.html']({user: username});
+    var navBar = templates['navbar.html']({user: username,  LoggedIn: loggedIn.toString(), IsNavIndex: "not-index-page"});
 
   var html = templates["layout.html"]({
     title: "Sign Up",

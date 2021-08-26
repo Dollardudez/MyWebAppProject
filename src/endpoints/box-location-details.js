@@ -37,7 +37,7 @@ function boxDetails(req, res) {
   
   
   var requestList = templates['request-list.html']({requests : requests, userId: userId});
-  var navBar = templates['navbar.html']({user: username, LoggedIn: loggedIn.toString() });
+  var navBar = templates['navbar.html']({user: username, LoggedIn: loggedIn.toString(), IsNavIndex: "not-index-page" });
   
   if(loggedIn){
     var requestForm = templates['request-form.html']({id : id});
@@ -48,7 +48,7 @@ function boxDetails(req, res) {
     var boxHtml = templates['box.html']({name : name, lat : lat, lng : lng, requestForm: prompt, requestList: requestList});
   }
   var title = name;
-  var html = templates['layout.html']({content: boxHtml, navbar: navBar});
+  var html = templates['layout.html']({content: boxHtml, navbar: navBar, IsNavIndex: "not-index-page"});
   console.log(req.cookies);
   
   res.setHeader("Content-Type", "text/html");

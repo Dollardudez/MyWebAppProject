@@ -1,37 +1,49 @@
-<nav id="navbar" class="push better-nav fixed-top">
-  <div class="container">
-    <div class="head">
-      <a href="/" class="brand">
-        <div class="logo">
-          <img class="image" src="/favicon-64x64.png" alt="Chest" />
-        </div>
-        <div class="title">
-          <h3>MHKCC</h3>
-        </div>
-      </a>
+<div id="<%= IsNavIndex %>">
+  <nav id="navbar" class="push better-nav fixed-top">
+    <div class="container">
+      <div class="head">
+        <a href="/" class="brand">
+          <div class="logo">
+            <img class="image" src="/favicon-64x64.png" alt="Chest" />
+          </div>
+          <div class="title">
+            <h3>MHKCC</h3>
+          </div>
+        </a>
+      </div>
+      <div class="body">
+        <ul class="loggedIn" id="<%= LoggedIn %>">
+          <li class="home"><a href="/">Home</a></li>
+          <li class="page"><a href="/#chests">Chests</a></li>
+          <li class="blog"><a href="/#contact">Contact</a></li>
+          <li class="user"><p><%= user %></p></li>
+        </ul>
+      </div>
     </div>
-    <div class="body">
-      <ul class="loggedIn" id="<%= LoggedIn %>">
-        <li class="home"><a href="/">Home</a></li>
-        <li class="page"><a href="/#chests">Chests</a></li>
-        <li class="blog"><a href="/#contact">Contact</a></li>
-        <li class="user"><p><%= user %></p></li>
-      </ul>
-    </div>
-    
-  </div>
+  </nav>
+</div>
+
+
 
 <script>
+  console.log("hit script");
+  if($("#index-page")){
     $(document).ready(function(){
       var windowHeight = $(window).height();
       $(window).scroll(function() { // check if scroll event happened
-        if ($(document).scrollTop() > 200) { // check if user scrolled more than 50 from top of the browser window
+        if ($(document).scrollTop() > 200) { // check if user scrolled more than 200 from top of the browser window
           $("#navbar").css("background-color", "#f8f8f8"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
         } else {
           $("#navbar").css("background-color", "transparent"); // if not, change it back to transparent
         }
       });
     });
+  }
+  else{
+    console.log("hit else");
+    $("#navbar").css("background-color", "#f8f8f8");
+    
+  }
+    
 </script>
-</nav>
 

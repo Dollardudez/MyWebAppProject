@@ -6,7 +6,7 @@ module.exports = function(req, res) {
   if (typeof loggedIn === 'undefined') {
     loggedIn = false;
   }
-  var navBar = templates['navbar.html']({user: username, LoggedIn: loggedIn.toString() });
+  var navBar = templates['navbar.html']({user: username, LoggedIn: loggedIn.toString(), IsNavIndex : "not-index-page" });
   var form = templates["signup.html"]({
     errorMessage: ""
   });

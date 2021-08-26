@@ -1,24 +1,46 @@
-<h2>Requests for the Chests</h2>
-<ul>
-<% requests.forEach((request) => { %>
-  <li id="<%= request.id%>">
-    <div class="request-user">
-        <%= request.firstname + " " + request.lastname %>
-    </div>
-      <p class="request-text">
-        <%= request.request %>
-      </p>
 
-      <% if(request.fulfilled != 0) { %>
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-          width="24" height="24"
-          viewBox="0 0 172 172"
-          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#295c8a"><path d="M145.43294,37.93294l-80.93294,80.93295l-30.76628,-30.76628l-10.13411,10.13411l40.90039,40.90039l91.06706,-91.06705z"></path></g></g></svg>
-      <%}%>
-      <% if(userId === request.userId && request.fulfilled == 0) { %>
-    <form action="/box-locations/<%- request.boxId %>/requests/<%- request.id %>/fulfill" method="POST">
-      <button type="submit">Request Fulfilled</button>
-    </form>    
-      <%}%>
-<% }); %>
-</ul>
+<div id="request-div">
+
+  <h2>Requests for the Chests</h2>
+  <table class="table table-hover table-striped">
+      <thead>
+        <tr class="bg-primary">
+            <th scope="col">Name</th>
+            <th scope="col">Request</th>
+            <th scope="col">Fulfilled</th>
+        </tr>
+    </thead>
+      <tbody>
+        <% requests.forEach((request) => { %>
+          <tr>
+            <td class="request-user">
+              <%= request.firstname + " " + request.lastname %>
+          </td>
+          <td class="request-text">
+            <%= request.request %>
+          </td>
+      
+          <% if(request.fulfilled != 0) { %>
+            <td>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="24" height="24"
+              viewBox="0 0 172 172"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#295c8a"><path d="M145.43294,37.93294l-80.93294,80.93295l-30.76628,-30.76628l-10.13411,10.13411l40.90039,40.90039l91.06706,-91.06705z"></path></g></g></svg>
+            </td>
+              <%}%>
+          <% if(userId === request.userId && request.fulfilled == 0) { %>
+            <td>
+              <form action="/box-locations/<%- request.boxId %>/requests/<%- request.id %>/fulfill" method="POST">
+                <button type="submit">Request Fulfilled</button>
+              </form>    
+            </td>
+          </tr>
+            
+            <%}%>
+      <% }); %>
+          </tbody>
+      </table>
+      
+  
+
+</div>

@@ -10,7 +10,7 @@ function indexPage(req, res) {
     loggedIn = false;
   }
   var contact = templates['contact-form.html']();
-  var navBar = templates['navbar.html']({user: username, LoggedIn: loggedIn.toString()  });
+  var navBar = templates['navbar.html']({user: username, LoggedIn: loggedIn.toString(), IsNavIndex: "index-page"});
   var indexHtml = templates['index.html']({contact: contact});
   var title = "Index";
   var html = templates['layout.html']({content: indexHtml, navbar: navBar});
