@@ -10,6 +10,8 @@ html{
   margin-left: 15vw;
   height: 30%;
   width: 30%;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 #intro-inner{
   background:#f9f9ea;
