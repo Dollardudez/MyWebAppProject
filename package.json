@@ -8,6 +8,7 @@
     "npm": "6.x"
   },
   "dependencies": {
+    "@craco/craco": "^6.2.0",
     "bcryptjs": "^2.3.0",
     "better-sqlite3": "^6.0.1",
     "dotenv": "^10.0.0",
