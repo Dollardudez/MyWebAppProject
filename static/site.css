@@ -2,20 +2,42 @@ html{
   margin: 0 auto;
 }
 
-#Header{
-  height: 60vh;
+#header-wrapper{
+  margin: auto;
+}
+
+#intro-inner > img {
+  margin-left: 15vw;
+  height: 30%;
+  width: 30%;
+}
+#intro-inner{
+  background:#f9f9ea;
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
+}
+#Header{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
   color: white;
   justify-content: center;
-  background-image: url("view-4703515_1280.jpg");
-  background-position: 10% 10%;
+  background-image: url("header.jpg");
+  background-position: 0% 0%;
   background-size: cover;
   background-attachment: local;
 }
 
+#Header > h4{
+  color: white;
+}
+
 h1{
   font-size: 80px;
+  color: #ededc1;
 }
 
 .Name{
@@ -29,7 +51,7 @@ h1{
   margin: 5vh 10vw 20vh 10vw
 }
 
-img{
+.EachMapDiv > img{
   width: 300px;
   height: 300px;
 }
@@ -70,12 +92,9 @@ a{
 
 #Intro{
   align-items: center;
-  margin-top: 3vh;
-  margin-bottom: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 15vh auto;
 }
 
 #Intro-Paragraph{
@@ -145,22 +164,9 @@ h2{
   box-shadow: 1px 4px 8px 1px rgba(0,0,0,0.2);
 }
 
-#web{
-  margin-left: -20vw;
-
-}
-#community{
-  margin-left: 6vw;
-
-}
-#connect{
-  margin-left: 25vw;
-
-} 
-
 .intro-icons{
   margin: 5vh;
-  color: #2f723b;
+  color: #295C8A;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -170,7 +176,6 @@ h2{
 
 #nice-icons{
   display: flex;
-  background:white;
   margin: 0;
   padding: 0;
   width: 100%;

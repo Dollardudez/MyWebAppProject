@@ -4,7 +4,7 @@
   body { background: #ededc1; position: relative; }
 
 /* Navbar */
-  .better-nav { word-wrap: break-word; background: #e8ebeb; height: 100px; margin-bottom: 30px; } /* Set the height of the navbar */
+  .better-nav { word-wrap: break-word; height: 100px; margin-bottom: 30px; } /* Set the height of the navbar */
   .better-nav a { color: #000; opacity: 0.6; }
   .better-nav a:hover,
   .better-nav a:focus { opacity: 1; }
