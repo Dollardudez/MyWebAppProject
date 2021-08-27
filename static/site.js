@@ -27,8 +27,6 @@ fetch('box-locations.json')
 
     aTag.appendChild(CreateMapCard(name, `https://open.mapquestapi.com/staticmap/v5/map?key=bHFGwnYDpeEqGPgYbqqmHBr7LuInUuNZ&locations=${lat},${lng}&size=200,200@2x`)); 
     }
-    console.log("am i here");
-
 
 });
 

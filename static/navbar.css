@@ -1,19 +1,19 @@
-/* General */
   @import 'https://fonts.googleapis.com/css?family=Comfortaa:400,700';
   html, body { /* height: 100%; */ }
   body { background: #ededc1; position: relative; }
 
-/* Navbar */
+
   .better-nav { word-wrap: break-word; height: 100px; margin-bottom: 30px; } /* Set the height of the navbar */
   .better-nav a { color: #000; opacity: 0.6; }
   .better-nav a:hover,
   .better-nav a:focus { opacity: 1; }
   .better-nav .container { height: 100%; }
   .container .better-nav .container { max-width: 100%; }
-  /* Fixed */
+
+
+
     .better-nav.fixed-top { position: fixed; top: 0; left: 0; right: 0; z-index: 90; }
     .better-nav.fixed-bottom { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; }
-  /* Head */
     .better-nav .head { float: left; height: 100%; }
     .better-nav .head .brand { display: block; opacity: 1; padding: 15px 0; height: 100%; text-decoration: none; }
     .better-nav .head .brand .logo { float: left; margin-right: 15px; height: 100%; }
@@ -22,7 +22,8 @@
     .better-nav .head .brand .title h3 { opacity: 0.7; display: table-cell; vertical-align: middle; font-size: 24px; font-weight: bold; font-family: 'Comfortaa', cursive; }
     .better-nav .head .brand .title h3:hover,
     .better-nav .head .brand .title h3:focus { opacity: 1; }
-   /* Body */
+
+
     .better-nav .body { float: right; height: 100%; }
     .better-nav .body li:hover,
     .better-nav .body li:focus { background: #ededc1; }
@@ -35,11 +36,6 @@
     .better-nav .body > ul > li > p{ color: #2f723b; display: table-cell; vertical-align: middle; text-decoration: none; padding: 0 15px; text-align: inherit; }
     .better-nav .body > ul > li > a.active{ background: #ededc1;}
 
-      
-
-/* Media Queries */
-  @media (max-height: 768px) {
-  }
 
   @media (max-width: 767px) {
     .better-nav .body { display: none; }
