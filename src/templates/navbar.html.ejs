@@ -26,7 +26,6 @@
 
 
 <script>
-  console.log("hit script");
   if($("#index-page").length){
     $(document).ready(function(){
       var windowHeight = $(window).height();
@@ -35,15 +34,38 @@
           $("#navbar").css("background-color", "#f8f8f8"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
         } else {
           $("#navbar").css("background-color", "transparent"); // if not, change it back to transparent
+          
         }
       });
-    });
-  }
-  else{
-    console.log("hit else");
-    $("#navbar").css("background-color", "#f8f8f8");
-    
-  }
+      
+      if($("#navbar").css("background-color") === 'rgba(0, 0, 0, 0)'){
+        $("li").hover(
+          function(){
+            $("li").css("background", "transparent");
+          },
+          function(){
+            $("li").css("background", "transparent");
+        });
+      }
+      else{
+        console.log("in else")
+        $("li").hover(
+          function(){
+            $("li").css("background", "#ededc1");
+          },
+          function(){
+            $("li").css("background", "transparent");
+        });
+      }
+          
+
+        });
+      }
+      else{
+        $("#navbar").css("background-color", "#f8f8f8");
+      }
+
+  
     
 </script>
 

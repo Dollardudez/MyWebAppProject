@@ -23,5 +23,3 @@ else{
   myAnchor2.href = "/signup";
   signInOrOut2.appendChild(myAnchor2);
 }
-
-console.log()

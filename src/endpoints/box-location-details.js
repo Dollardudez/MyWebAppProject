@@ -26,7 +26,6 @@ function boxDetails(req, res) {
     JOIN users ON users.id = requests.user_id
     WHERE box_id = ?`).all(id);
   
-  console.log(requests);
   
   var users = db.prepare(`SELECT * FROM requests 
               WHERE box_id = ?`).all(id); 
@@ -49,7 +48,6 @@ function boxDetails(req, res) {
   }
   var title = name;
   var html = templates['layout.html']({content: boxHtml, navbar: navBar, IsNavIndex: "not-index-page"});
-  console.log(req.cookies);
   
   res.setHeader("Content-Type", "text/html");
   res.setHeader("Content-Length", html.length);

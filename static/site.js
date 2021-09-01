@@ -12,7 +12,6 @@ fetch('box-locations.json')
     let name = boxArray[i].name;
     let lat = boxArray[i].lat;
     let lng = boxArray[i].lng;
-    console.log(boxArray[i].name);
     var myIMGDiv = document.createElement('div');
     myIMGDiv.className = "EachMapDiv";
     mapdiv.appendChild(myIMGDiv);

@@ -1,16 +1,26 @@
 <form method="POST" class="contact-card" action="/contact">
-
-    <label for="email">Email:</label>
-    <div>
-      <img class="sign-form" src="https://img.icons8.com/fluency-systems-regular/48/000000/new-post.png"/>
-      <input type="text" name="email" required="required" placeholder="enter email..."/>
+  <hr>
+  
+  <div>
+      <label for="email">
+        <svg class="sign-form" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="24" height="24"
+          viewBox="0 0 172 172"
+          
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#295c8a"><path d="M30.57031,41.35049c-1.70123,-0.00139 -3.33919,0.64493 -4.58109,1.80763l55.58847,37.42554c2.24161,1.52063 5.17805,1.54289 7.44246,0.05643l57.1658,-37.31137c-1.25828,-1.26715 -2.97051,-1.9793 -4.75627,-1.97823zM23.85156,49.81979v74.11096c0.00426,3.7089 3.00985,6.71449 6.71875,6.71875h110.85938c3.7089,-0.00426 6.71449,-3.00985 6.71875,-6.71875v-73.85967l-55.452,36.19267c-4.52569,2.97043 -10.3939,2.92694 -14.87507,-0.11023z"></path></g></g></svg>
+          <input type="text" name="email" required="required" placeholder="enter email..."/>
+        </label>
     </div>
     
 
     <label for="phone">Phone Number:</label>
     <div>
-      <img class="sign-form" alt="password lock" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNDgiIGhlaWdodD0iNDgiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iIzJmNzIzYiI+PHBhdGggZD0iTTg2LDE0LjMzMzMzYy0xNS43Njg3NiwwIC0yOC42NjY2NywxMi44OTc5IC0yOC42NjY2NywyOC42NjY2N3YxNC4zMzMzM2gtMTIuNTQxNjdjLTguODQxODgsMCAtMTYuMTI1LDcuMjgzMTIgLTE2LjEyNSwxNi4xMjV2NjguMDgzMzNjMCw4Ljg0MTg4IDcuMjgzMTIsMTYuMTI1IDE2LjEyNSwxNi4xMjVoODIuNDE2NjdjOC44NDE4OCwwIDE2LjEyNSwtNy4yODMxMiAxNi4xMjUsLTE2LjEyNXYtNjguMDgzMzNjMCwtOC44NDE4OCAtNy4yODMxMiwtMTYuMTI1IC0xNi4xMjUsLTE2LjEyNWgtMTIuNTQxNjd2LTE0LjMzMzMzYzAsLTE1Ljc2ODc2IC0xMi44OTc5LC0yOC42NjY2NyAtMjguNjY2NjcsLTI4LjY2NjY3ek04NiwyNS4wODMzM2M5Ljk1OTU3LDAgMTcuOTE2NjcsNy45NTcxIDE3LjkxNjY3LDE3LjkxNjY3djE0LjMzMzMzaC0zNS44MzMzM3YtMTQuMzMzMzNjMCwtOS45NTk1NyA3Ljk1NzEsLTE3LjkxNjY3IDE3LjkxNjY3LC0xNy45MTY2N3pNNDQuNzkxNjcsNjguMDgzMzNoODIuNDE2NjdjMy4wMzMyOSwwIDUuMzc1LDIuMzQxNzEgNS4zNzUsNS4zNzV2NjguMDgzMzNjMCwzLjAzMzI5IC0yLjM0MTcxLDUuMzc1IC01LjM3NSw1LjM3NWgtODIuNDE2NjdjLTMuMDMzMjksMCAtNS4zNzUsLTIuMzQxNzEgLTUuMzc1LC01LjM3NXYtNjguMDgzMzNjMCwtMy4wMzMyOSAyLjM0MTcxLC01LjM3NSA1LjM3NSwtNS4zNzV6TTg2LDk2Ljc1Yy01LjkzNzA2LDAgLTEwLjc1LDQuODEyOTQgLTEwLjc1LDEwLjc1YzAsNS45MzcwNiA0LjgxMjk0LDEwLjc1IDEwLjc1LDEwLjc1YzUuOTM3MDYsMCAxMC43NSwtNC44MTI5NCAxMC43NSwtMTAuNzVjMCwtNS45MzcwNiAtNC44MTI5NCwtMTAuNzUgLTEwLjc1LC0xMC43NXoiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg=="/>
-      <input type="number" name="phone" required="required" placeholder="password..."/>  
+
+      <svg class="sign-form" alt="phone" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="24" height="24"
+        viewBox="0 0 172 172"
+        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#295c8a"><path d="M143.49817,110.99733c-4.515,-0.1075 -10.19817,-0.37267 -13.78867,-1.00333c-3.88433,-0.688 -8.557,-2.021 -11.8465,-3.04583c-2.58,-0.80267 -5.38933,-0.09317 -7.30283,1.81317l-15.8885,15.79533c-10.97933,-5.7835 -19.77283,-12.52017 -27.219,-20.00933c-7.48917,-7.44617 -14.22583,-16.23967 -20.00933,-27.219l15.79533,-15.89567c1.90633,-1.9135 2.61583,-4.72283 1.81317,-7.30283c-1.01767,-3.28233 -2.35783,-7.955 -3.03867,-11.83933c-0.63783,-3.5905 -0.89583,-9.27367 -1.0105,-13.78867c-0.09317,-3.90583 -3.27517,-7.00183 -7.181,-7.00183h-25.155c-3.139,0 -7.16667,2.35067 -7.16667,7.16667c0,32.5295 13.18667,63.597 35.58967,86.24367c22.64667,22.403 53.71417,35.58967 86.24367,35.58967c4.816,0 7.16667,-4.02767 7.16667,-7.16667v-25.155c0,-3.90583 -3.096,-7.08783 -7.00183,-7.181z"></path></g></g></svg>  
+      <input type="number" name="phone" required="required" placeholder="enter phone..."/>  
     </div>
 
     <div>
