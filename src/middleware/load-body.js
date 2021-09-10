@@ -23,6 +23,7 @@ function loadBody(req, res, next) {
     switch(encoding.split(';')[0]) {
       case 'application/x-www-form-urlencoded':
         req.body = querystring.parse(data.toString());
+        console.log(req.body);
         next();
         break;
       case 'multipart/form-data':

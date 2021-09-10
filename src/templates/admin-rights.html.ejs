@@ -1,0 +1,78 @@
+<div id="admin-details">
+    <div id="content">
+      <div>
+
+
+        <table class="table table-hover table-striped">
+            <thead>
+              <tr class="bg-primary">
+                  <th scope="col">Box Id</th>
+                  <th scope="col">Box Location</th>
+                  <th scope="col">Number of Requests</th>
+                  <th scope="col">Remove</th>
+              </tr>
+          </thead>
+            <tbody>
+              <% boxes.forEach((box) => { %>
+                <tr>
+                  <td class="request-user">
+                    <%= box.id %>
+                </td>
+                <td class="request-text">
+                  <%= box.name %>
+                </td>
+            
+                  <td>
+                    <%=box.requests %>
+                  </td>
+
+                  <td>
+                    <form action="/box-locations/<%- box.id %>/DELETE" method="POST">
+                      <button class="btn btn-outline" type="submit">Delete Forever</button>
+                    </form>    
+                  </td>
+                </tr>
+                  
+            <% }); %>
+                </tbody>
+            </table>
+
+
+      </div>
+      <div>
+        <table class="table table-hover table-striped">
+            <thead>
+              <tr class="bg-primary">
+                  <th scope="col">User Id</th>
+                  <th scope="col">User Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Ban</th>
+              </tr>
+          </thead>
+            <tbody>
+              <% users.forEach((user) => { %>
+                <tr>
+                  <td class="request-user">
+                    <%= user.id %>
+                </td>
+                <td class="request-text">
+                  <%= user.firstname + " " + user.lastname %>
+                </td>
+            
+                  <td>
+                    <%=user.email%>
+                  </td>
+                  <td>
+                    <form action="/users/<%- user.id %>/delete" method="DELETE">
+                        <button class="btn btn-outline" type="submit">Delete Forever</button>
+                    </form>    
+                  </td>
+                </tr>
+                  
+            <% }); %>
+                </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+  

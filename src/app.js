@@ -1,4 +1,5 @@
 const express = require('express');
+var bodyParser = require('body-parser')
 const boxLocations = require('./endpoints/box-locations.js');
 const boxDetails = require('./endpoints/box-location-details.js');
 const createRequest = require('./endpoints/create-request.js')
@@ -16,6 +17,7 @@ const fulfillRequest = require('./endpoints/fulfill-request');
 const newBox = require('./endpoints/box-locations-new');
 const createBox = require('./endpoints/box-locations-create');
 const parseEmail = require('./endpoints/contact-form');
+const adminRights = require('./endpoints/admin-rights');
 
 
 var app = express();
@@ -25,7 +27,7 @@ app.use(express.static('static'));
 app.get('/', indexPage);
 app.get("/box-locations/create", newBox);
 app.post("/box-locations/create", loadBody, createBox);
-app.post("/contact", loadBody, parseEmail);
+app.post("/contact", express.urlencoded({extended: true}), parseEmail);
 app.post("/box-locations/:id/requests/:request_id/fulfill", loadBody, fulfillRequest);
 app.post("/box-locations/:id/requests", loadBody, createRequest);
 app.post("/signin", loadBody, createSession);
@@ -35,5 +37,7 @@ app.post("/signup", loadBody, createUser);
 app.get("/box-locations/:id", boxDetails);
 app.get("/box-locations.json", boxLocations);
 app.get("/logout", logout);
+app.get("/admin", adminRights);
+
 
 module.exports = app;

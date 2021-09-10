@@ -62,7 +62,7 @@ function success(req, res, user) {
  * @param {string} errorMessage - a message to display to the user
  */
 function failure(req, res, errorMessage) {
-  const loggedIn = req.session && true;
+  var loggedIn = req.session && true;
   var username = loggedIn ? req.session.user.first + " " + req.session.user.last : "Guest";
   if (typeof loggedIn === 'undefined') {
     loggedIn = false;

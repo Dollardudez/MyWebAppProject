@@ -75,7 +75,15 @@ h1{
   width: 100%;
   margin-top: 20vh;
   margin-bottom: 5vh;
+}
 
+#Whitespace h2{
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
+#chest-locations{
+  margin-top: 10vh;
 }
 
 #sign-up{
@@ -119,7 +127,8 @@ a{
 
 #Intro-Paragraph{
   margin: 5vh auto;
-  font-size: 40px;
+  font-size: 50px;
+  color:#295C8A;
 }
 
 h2{
@@ -154,7 +163,7 @@ h2{
 }
 
 #Divider{
-  margin-top: 20vh;
+  margin-top: 10vh;
 }
 
 #navbar-container{
@@ -238,8 +247,13 @@ h2{
   align-items: center;
   margin-left: 20vw;
   margin-right: 20vw;
-  font-size: 20px;
-  color: #295C8A;
+  font-size: 30px;
+  color: white;
+}
+
+#intro-paragraph-div p{
+
+  color:#295C8A;
 }
 
 p{
@@ -250,4 +264,13 @@ p{
 hr{
   background-color: #295C8A;
   width: 40vw;
+}
+
+#admin-details{
+  margin-top: 20vh;
+}
+
+.table table-hover table-striped{
+  margin-left: 5vw;
+  margin-right: 5vw;
 }

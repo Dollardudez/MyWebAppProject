@@ -6,7 +6,7 @@ const db = require('../database');
  * Creates a new post using the supplied form data
  */
 function createBox(req, res) {
-    console.log("I am here!!!!!!!!");
+    console.log(req);
     var name = req.body.name
     var lat = req.body.lat
     var lng = req.body.lng
